@@ -2,6 +2,14 @@ body {
   height: 100%;
 }
 
+.apple,
+.pear,
+.lemon,
+.orange  {
+  max-width: 25%;
+  height: auto;
+}
+
 .container {
   background-image: url('../images/building.jpg');
   background-size: cover;
