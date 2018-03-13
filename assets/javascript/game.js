@@ -13,6 +13,15 @@ var losses;
 // FUNCTIONS
 //=======================================================
 
+function displayCurrentScore() {
+  $(".currentScoreArea").text("Your target number is: " + currentScore);
+}
+
+function displayTargetNum() {
+  $(".targetNumArea").text("Your target number is: " + targetNum);
+}
+
+
 function getRandomNum(range) {
   // returns random value between a minimum and maximum value
   // range = [minVal, maxVal]
@@ -23,6 +32,14 @@ function getRandomNum(range) {
   var randomVal = Math.floor(Math.random() * maxVal);
   // brings minimum value returned up to range[0]
   return randomVal + minVal;
+}
+
+function initializeDisplay() {
+  // Sets/resets display for start of each round of play 
+  displayTargetNum();
+  displayCurrentScore();
+  // TODO add win/loss
+  // TODO add other display items?
 }
 
 function initalizeGlobals() {
@@ -54,14 +71,11 @@ function playRound() {
     currentScore += fruitValue;
     updateCurrentScoreDisplay();
     winLoseOrGoOn();
-
-
   }); // close of on-click function
 }
 
 function setFruitNums() {
   // initializes fruit values to random num between 1 - 12
-  // TODO make these random
   var range = [1, 12];
   appleNum = getRandomNum(range);
   lemonNum = getRandomNum(range);
@@ -107,6 +121,7 @@ function setUpGame() {
   // Sets up play of game
   initalizeGlobals();
   logVals();
+  initializeDisplay();
 }
 
 function updateCurrentScoreDisplay() {
@@ -134,7 +149,7 @@ setUpGame();
 playRound();
 
 // RESUME: 
-//  update html for new background image
 //  update html to show targetNum
 //  update html to show current score
 //  update html to give current score(static tile) a better name
+// defer giveing targetNum a random value until game is ready to complete
