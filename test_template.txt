@@ -1,0 +1,50 @@
+TEST TEMPLATE
+
+d = deferred
+e = met by enhancement
+p = passed
+
+
+Requirements
+============
+[] Game plays as follows:
+	() four crystals displayed as buttons on the page.
+	() player is shown a random number at the start of the game.
+	() When player clicks on a crystal, it adds a specific amount to the player's total score as shown in a counter
+	() game hides this amount until the player clicks a crystal.
+	() player wins if total score matches random number and loses if total score goes it.
+[] The random number should be between 19 - 120.
+[] Each crystal should have a random hidden value between 1 - 12.
+[] Game restarts whenever the player wins or loses.
+[] On restart:
+	() player sees new random number
+	() all crystals have four new hidden values.
+	() user's score counter resets to zero.
+[] App shows the number of games the player wins and loses.
+[] App does not refresh the page to restart the game.
+
+
+Bonus
+=====
+
+
+Functionality
+=============
+
+
+
+Display
+=======
+
+
+
+GitHub Pages
+============
+[] Page performs on load as expected
+[] Page performs after reload as expected
+
+Cleanup
+=======
+[] HTML validates
+[] CSS validates
+[] JS delinted (stretch)
