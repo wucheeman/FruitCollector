@@ -13,6 +13,18 @@ var losses;
 // FUNCTIONS
 //=======================================================
 
+function getRandomNum(range) {
+  // returns random value between a minimum and maximum value
+  // range = [minVal, maxVal]
+  var minVal = range[0];
+  var maxVal = (range[1] + 1) - minVal;
+  // var range = [minVal, maxVal];
+  // returns value between 0 and maxVal - 1
+  var randomVal = Math.floor(Math.random() * maxVal);
+  // brings minimum value returned up to range[0]
+  return randomVal + minVal;
+}
+
 function initalizeGlobals() {
   // initializes values for newly started game
   targetNum = setTargetNum();
@@ -50,10 +62,11 @@ function playRound() {
 function setFruitNums() {
   // initializes fruit values to random num between 1 - 12
   // TODO make these random
-  appleNum = 1;
-  lemonNum = 2;
-  pearNum = 5;
-  orangeNum = 10;
+  var range = [1, 12];
+  appleNum = getRandomNum(range);
+  lemonNum = getRandomNum(range);
+  pearNum = getRandomNum(range);
+  orangeNum = getRandomNum(range);
   return [appleNum, lemonNum, pearNum, orangeNum]; 
 }
 
@@ -119,3 +132,9 @@ function winLoseOrGoOn(){
 
 setUpGame();
 playRound();
+
+// RESUME: 
+//  update html for new background image
+//  update html to show targetNum
+//  update html to show current score
+//  update html to give current score(static tile) a better name
