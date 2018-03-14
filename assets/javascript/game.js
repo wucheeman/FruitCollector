@@ -9,6 +9,9 @@ var targetNum;
 var currentScore;
 var wins;
 var losses;
+var playAnother;
+var continuing = false;
+
 
 // FUNCTIONS
 //=======================================================
@@ -53,8 +56,16 @@ function initalizeGlobals() {
   fruit = setUpFruit();
   displayFruit = $(".fruit");
   currentScore = 0;
-  wins = 0;
-  losses = 0;
+  playAnother = false;
+  initializeWinsAndLosses();
+}
+
+function initializeWinsAndLosses() {
+  // sets wins and losses to 0 when game starts
+  if (!continuing) {
+    wins = 0;
+    losses = 0;
+  }
 }
 
 function logVals() {
@@ -65,6 +76,19 @@ function logVals() {
               " lemonNum: " + lemonNum +
               " pearNum: " + pearNum + 
               " orangeNum: " + orangeNum );
+}
+
+function main() {
+  setUpGame();
+  playRound();
+  continuing = true;
+  if (playAnother) {
+    nextRound();
+  }
+}
+
+function nextRound(){
+  main();
 }
 
 function playRound() {
@@ -143,16 +167,18 @@ function winLoseOrGoOn(){
   // TODO: replace alerts with real functionality
   // TODO: add logic to restart game after win or loss?
   if (currentScore === targetNum) {
-    // TODO: better way to do this?
+    // TODO: better way to do this? Make it DRY?
     alert("You win!");
     wins++;
     displayWins();
+    playAnother = true;
   }
   else if (currentScore > targetNum) {
     // TODO: better way to do this?
     alert("You lose!!");
     losses++;
     displayLosses();
+    playAnother = true;
   }
 }
 
@@ -160,11 +186,9 @@ function winLoseOrGoOn(){
 //=======================================================
 
 $(document).ready(function() {
-  setUpGame();
-  playRound();
+    main();
 });
 
 
 // RESUME: 
-// Update win/loss record when win or lose
 // defer giveing targetNum a random value until game is ready to complete
