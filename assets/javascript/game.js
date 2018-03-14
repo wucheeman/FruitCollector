@@ -14,32 +14,41 @@ var losses;
 //=======================================================
 
 function displayCurrentScore() {
-  $(".currentScoreArea").text("Your target number is: " + currentScore);
+  $(".currentScoreArea").text(currentScore);
+}
+
+function displayLosses() {
+  $("#losses").text(losses);
 }
 
 function displayTargetNum() {
   $(".targetNumArea").text("Your target number is: " + targetNum);
 }
 
+function displayWins() {
+  $("#wins").text(wins);
+}
 
 function getRandomNum(range) {
   // returns random value between a minimum and maximum value
-  // range = [minVal, maxVal]
   var minVal = range[0];
   var maxVal = (range[1] + 1) - minVal;
-  // var range = [minVal, maxVal];
   // returns value between 0 and maxVal - 1
   var randomVal = Math.floor(Math.random() * maxVal);
-  // brings minimum value returned up to range[0]
+  // ensures value returned is within range specified.
   return randomVal + minVal;
+}
+
+function initializeButtons() {
+  return;
 }
 
 function initializeDisplay() {
   // Sets/resets display for start of each round of play 
   displayTargetNum();
   displayCurrentScore();
-  // TODO add win/loss
-  // TODO add other display items?
+  displayWins();
+  displayLosses();
 }
 
 function initalizeGlobals() {
@@ -122,6 +131,7 @@ function setUpGame() {
   initalizeGlobals();
   logVals();
   initializeDisplay();
+  initializeButtons();
 }
 
 function updateCurrentScoreDisplay() {
@@ -149,7 +159,4 @@ setUpGame();
 playRound();
 
 // RESUME: 
-//  update html to show targetNum
-//  update html to show current score
-//  update html to give current score(static tile) a better name
 // defer giveing targetNum a random value until game is ready to complete
