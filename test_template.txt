@@ -19,7 +19,7 @@ Requirements
 [] On restart:
 	() player sees new random number
 	() all crystals have four new hidden values.
-	() user's score counter resets to zero.
+	() user's current score counter resets to zero.
 [] App shows the number of games the player wins and loses.
 [] App does not refresh the page to restart the game.
 
@@ -35,7 +35,7 @@ Functionality
 
 Display
 =======
-
+[] Page closely resembles the example in the assignment
 
 
 GitHub Pages

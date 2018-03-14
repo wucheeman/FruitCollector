@@ -39,10 +39,6 @@ function getRandomNum(range) {
   return randomVal + minVal;
 }
 
-function initializeButtons() {
-  return;
-}
-
 function initializeDisplay() {
   // Sets/resets display for start of each round of play 
   displayTargetNum();
@@ -78,7 +74,8 @@ function playRound() {
     fruitValue = parseInt(fruitValue);
     console.log("This fruit's value is: " + fruitValue);
     currentScore += fruitValue;
-    updateCurrentScoreDisplay();
+    // updateCurrentScoreDisplay();
+    displayCurrentScore();
     winLoseOrGoOn();
   }); // close of on-click function
 }
@@ -131,32 +128,43 @@ function setUpGame() {
   initalizeGlobals();
   logVals();
   initializeDisplay();
-  initializeButtons();
 }
 
-function updateCurrentScoreDisplay() {
-  // updates browser window with current score
-  // TODO replace alert with real functionality
-  alert("New score: " + currentScore);
-}
+// TODO: delete?
+// function updateCurrentScoreDisplay() {
+//   // updates browser window with current score
+//   $(".currentScoreArea").text(currentScore);
+//   // TODO replace alert with real functionality
+//   alert("New score: " + currentScore);
+// }
 
 function winLoseOrGoOn(){
   // updates browser window when player wins or loses
   // TODO: replace alerts with real functionality
   // TODO: add logic to restart game after win or loss?
   if (currentScore === targetNum) {
+    // TODO: better way to do this?
     alert("You win!");
+    wins++;
+    displayWins();
   }
   else if (currentScore > targetNum) {
+    // TODO: better way to do this?
     alert("You lose!!");
+    losses++;
+    displayLosses();
   }
 }
 
 // GAME
 //=======================================================
 
-setUpGame();
-playRound();
+$(document).ready(function() {
+  setUpGame();
+  playRound();
+});
+
 
 // RESUME: 
+// Update win/loss record when win or lose
 // defer giveing targetNum a random value until game is ready to complete
