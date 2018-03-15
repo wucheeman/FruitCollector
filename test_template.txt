@@ -3,6 +3,7 @@ TEST TEMPLATE
 d = deferred
 e = met by enhancement
 p = passed
+w = waiting for further work
 
 
 Requirements
