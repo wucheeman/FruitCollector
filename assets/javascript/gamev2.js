@@ -2,7 +2,7 @@
 //=======================================================
 
 // TODO: does 'fruit' need to be global?
-var fruitClasses;
+//var fruitClasses;
 var displayFruit
 
 var targetNum;
@@ -41,7 +41,6 @@ function displayStatus() {
 
 function displayLosses() {
   console.log("starting displayLosses");
-  // $("#gameStatusxt("You lost!!");
   $("#losses").text(losses);
 }
 
@@ -51,7 +50,6 @@ function displayTargetNum() {
 
 function displayWins() {
   console.log("starting displayWins");
-  // $("#gameStatusxt("You won!!");
   $("#wins").text(wins);
 }
 
@@ -84,13 +82,13 @@ function initalizeGlobals() {
   playAnother = false;
   if (!continuing) {
     fruitClasses = setUpFruit();
-    console.log("with continuing = false, FruitClasses is " + fruitClasses);
+    // console.log("with continuing = false, FruitClasses is " + fruitClasses);
     wins = 0;
     losses = 0;
     gameStatus = "start";
   }
   else {
-    console.log("with continuing = true, FruitClasses is " + fruitClasses);
+    // console.log("with continuing = true, FruitClasses is " + fruitClasses);
     reInitializeFruit();
   }
 }
@@ -179,7 +177,7 @@ function setUpFruit() {
     var fruitClass = fruitClasses[i];
     $(fruitClass).append(fruitForGame);
   }
-  return fruitClasses;
+  // return fruitClasses;
 }
 
 function setUpGame() {
@@ -192,8 +190,6 @@ function setUpGame() {
 
 function winLoseOrGoOn(){
   // updates browser window when player wins or loses
-  // TODO: replace alerts with real functionality
-  // TODO: fix bug which outputs 'you win' before updating the display with the final value
   if (currentScore === targetNum) {
     // TODO: better way to do this? Make it DRY?
     // alert("You win!");
@@ -229,8 +225,8 @@ $(document).ready(function() {
 /*
 [x] Add random number generation to targetNum
 [x] First round functionality test
-[] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
-[] Fix bug *on reload* where gameStatusu won/you lost' remains)
+[x] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
+[x] Fix bug *on reload* where game status (you won/you lost' remains)
 [] Add text, esp. game rules.
 [] Second round functionality test
 [] Beautify page as time permits
