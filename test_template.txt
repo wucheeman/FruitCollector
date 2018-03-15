@@ -17,9 +17,9 @@ Requirements
 [] Each crystal should have a random hidden value between 1 - 12.
 [] Game restarts whenever the player wins or loses.
 [] On restart:
-	() player sees new random number
-	() all crystals have four new hidden values.
-	() user's current score counter resets to zero.
+	() game generates new random number to be matched
+	(x) all crystals have four new hidden values.
+	() user's current score resets to zero.
 [] App shows the number of games the player wins and loses.
 [] App does not refresh the page to restart the game.
 
@@ -30,12 +30,17 @@ Bonus
 
 Functionality
 =============
-
+[] Game initializes globals correctly
+[] Game reinitializes globals correctly
 
 
 Display
 =======
-[] Page closely resembles the example in the assignment
+[] Page closely resembles target_display.PNG
+[] Behavior when user wins/loses:
+	() Win/loss area says 'you won!!' or 'you lost!!' and updates counters. As new game progresses, this stays static until the next win/or loss.
+	() CurrentScore area resets to zero. It does not update to show the final value that caused the player to win or lose.
+	() Target number resets to new number
 
 
 GitHub Pages

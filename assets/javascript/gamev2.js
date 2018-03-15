@@ -9,6 +9,7 @@ var targetNum;
 var currentScore;
 var wins;
 var losses;
+var gameStatus;
 var playAnother;
 var continuing = false;
 
@@ -20,7 +21,27 @@ function displayCurrentScore() {
   $(".currentScoreArea").text(currentScore);
 }
 
+function displayStatus() {
+  if (gameStatus === "start") {
+    console.log("Displaying initial gameStatus");
+    $("#status").text("Let's play!!");
+  }
+  else if (gameStatus === "win") {
+    console.log("Displaying win gameStatus");
+    $("#status").text("You won!!");
+  }
+  else if (gameStatus === "lose") {
+    console.log("Displaying lose gameStatus");
+    $("#status").text("You lost!!");
+  }
+  else {
+    console.log("Shouldn't get here in displayStatus");
+  }
+}
+
 function displayLosses() {
+  console.log("starting displayLosses");
+  // $("#gameStatusxt("You lost!!");
   $("#losses").text(losses);
 }
 
@@ -29,6 +50,8 @@ function displayTargetNum() {
 }
 
 function displayWins() {
+  console.log("starting displayWins");
+  // $("#gameStatusxt("You won!!");
   $("#wins").text(wins);
 }
 
@@ -48,6 +71,8 @@ function initializeDisplay() {
   displayCurrentScore();
   displayWins();
   displayLosses();
+  console.log("calling displayStatus");
+  displayStatus('start');
 }
 
 function initalizeGlobals() {
@@ -62,6 +87,7 @@ function initalizeGlobals() {
     console.log("with continuing = false, FruitClasses is " + fruitClasses);
     wins = 0;
     losses = 0;
+    gameStatus = "start";
   }
   else {
     console.log("with continuing = true, FruitClasses is " + fruitClasses);
@@ -170,20 +196,25 @@ function winLoseOrGoOn(){
   // TODO: fix bug which outputs 'you win' before updating the display with the final value
   if (currentScore === targetNum) {
     // TODO: better way to do this? Make it DRY?
-    alert("You win!");
+    // alert("You win!");
     wins++;
     displayWins();
+    gameStatus = "win";
+    displayStatus();
     playAnother = true;
     return;
   }
   else if (currentScore > targetNum) {
     // TODO: better way to do this?
-    alert("You lose!!");
+    // alert("You lose!!");
     losses++;
     displayLosses();
+    gameStatus = 'lose';
+    displayStatus();
     playAnother = true;
     return;
   }
+  console.log("Did not win or lose so winLoseOrGoOn says continue")
 }
 
 // GAME
@@ -199,6 +230,7 @@ $(document).ready(function() {
 [x] Add random number generation to targetNum
 [x] First round functionality test
 [] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
+[] Fix bug *on reload* where gameStatusu won/you lost' remains)
 [] Add text, esp. game rules.
 [] Second round functionality test
 [] Beautify page as time permits
