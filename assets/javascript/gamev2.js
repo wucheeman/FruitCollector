@@ -121,19 +121,15 @@ function play() {
 }
 
 function reInitializeFruit() {
-  // var fruitClasses = [];
-  // for (var j = 0; j < fruitClasses.length; j++) {
-  //   fruitClasses.push("." + fruitClasses[j]);
-  //   console.log("fruitClasses[" + j + "] is " + fruitClasses[j]);
-  // }
-  console.log('reinitiazling fruit nums');
-  var fruitNums = setFruitNums();
-  console.log('fruitNums is ' + fruitNums);
-  for (var i = 0; i < fruitClasses.length; i++) {
-    console.log($(fruitClasses[i]).attr("data-fruitvalue"));
-    $(fruitClasses[i]).attr("data-fruitvalue", fruitNums[i]);
-    console.log($(fruitClasses[i]).attr("data-fruitvalue"));
-  }
+
+  console.log('reinitializing fruit nums');
+
+  $(".fruitImage").each(function (index, value){
+    console.log($(this).attr("data-fruitvalue"));
+    ($(this).attr("data-fruitvalue", getRandomNum([1, 12])));
+    console.log($(this).attr("data-fruitvalue"));
+  });
+
   console.log("exiting reInitializeFruit")
 }
 
@@ -224,10 +220,10 @@ $(document).ready(function() {
 
 // RESUME: 
 /*
-Restructured game basically works, BUT although I generate new values for each fruit
-I am not assigning those values correctly. When the game restarts, each fruit has the
-value assigned in the first game. 
-The problem is in reInitializeFruit; I don't know how to access dynamically generated elements and change the value of an attribute. Trying v3 to see if I can use static elements.
-Once this works, review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
+[] Add random number generation to targetNum
+[] First round functionality test
+[] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
+[] Add text, esp. game rules
+[] Second round functionality test
+[] Clean up code and final test before submission 
 */
-// defer giving targetNum a random value until game is ready to complete
