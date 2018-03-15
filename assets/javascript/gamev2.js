@@ -223,12 +223,7 @@ $(document).ready(function() {
 
 // RESUME: 
 /*
-[x] Add random number generation to targetNum
-[x] First round functionality test
-[x] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
-[x] Fix bug *on reload* where game status (you won/you lost' remains)
-[x] Add text, esp. game rules.
-[] Second round functionality test
-[] Beautify page as time permits - note margins around blocks especially
+[] Beautify page as time permits
+   () margins around blocks especially
 [] Clean up code and final test before submission 
 */
