@@ -69,14 +69,6 @@ function initalizeGlobals() {
   }
 }
 
-// function initializeWinsAndLosses() {
-//   // sets wins and losses to 0 when game starts
-//   if (!continuing) {
-//     wins = 0;
-//     losses = 0;
-//   }
-// }
-
 function logVals() {
   // TODO comment out when development is done
   console.log("targetNum: " + targetNum +
@@ -94,21 +86,15 @@ function main() {
   console.log('finished play and still running');
 }
 
-// TODO: delete
-// function nextRound(){
-  // console.log('in nextRound');
-  // main();
-// }
 
 function play() {
   // play the game until the window is closed
   displayFruit.on("click", ".fruitImage", function() {
-    console.log('starting playRound');
+    console.log('starting play loop');
     var fruitValue = ($(this).attr("data-fruitvalue"));
     fruitValue = parseInt(fruitValue);
     console.log("This fruit's value is: " + fruitValue);
     currentScore += fruitValue;
-    // updateCurrentScoreDisplay();
     displayCurrentScore();
     winLoseOrGoOn();
     continuing = true;
@@ -121,7 +107,7 @@ function play() {
 }
 
 function reInitializeFruit() {
-
+  // TODO: delete the console.logs
   console.log('reinitializing fruit nums');
 
   $(".fruitImage").each(function (index, value){
@@ -144,8 +130,8 @@ function setFruitNums() {
 }
 
 function setTargetNum() {
-  //  TODO: should return random num between 19 - 120
-  return 42;
+  var range = [19, 120];
+  return getRandomNum(range);
 }
 
 function setUpFruit() {
@@ -154,7 +140,6 @@ function setUpFruit() {
                    "assets/images/lemon.png",
                    "assets/images/pear.png",
                    "assets/images/orange.png" ];
-
   // data for each fruit's secret number
   var fruitNums = setFruitNums();
   // HTML class attributes
@@ -179,18 +164,9 @@ function setUpGame() {
   initializeDisplay();
 }
 
-// TODO: delete?
-// function updateCurrentScoreDisplay() {
-//   // updates browser window with current score
-//   $(".currentScoreArea").text(currentScore);
-//   // TODO replace alert with real functionality
-//   alert("New score: " + currentScore);
-// }
-
 function winLoseOrGoOn(){
   // updates browser window when player wins or loses
   // TODO: replace alerts with real functionality
-  // TODO: add logic to restart game after win or loss?
   // TODO: fix bug which outputs 'you win' before updating the display with the final value
   if (currentScore === targetNum) {
     // TODO: better way to do this? Make it DRY?
@@ -220,10 +196,11 @@ $(document).ready(function() {
 
 // RESUME: 
 /*
-[] Add random number generation to targetNum
-[] First round functionality test
+[x] Add random number generation to targetNum
+[x] First round functionality test
 [] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
-[] Add text, esp. game rules
+[] Add text, esp. game rules.
 [] Second round functionality test
+[] Beautify page as time permits
 [] Clean up code and final test before submission 
 */
