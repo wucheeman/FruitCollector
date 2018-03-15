@@ -45,7 +45,7 @@ function displayLosses() {
 }
 
 function displayTargetNum() {
-  $(".targetNumArea").text("Your target number is: " + targetNum);
+  $(".targetNumArea").text(targetNum);
 }
 
 function displayWins() {
@@ -227,8 +227,8 @@ $(document).ready(function() {
 [x] First round functionality test
 [x] Review TODOs. At a minimum, fix the bug noted in winLoseOrGoOn
 [x] Fix bug *on reload* where game status (you won/you lost' remains)
-[] Add text, esp. game rules.
+[x] Add text, esp. game rules.
 [] Second round functionality test
-[] Beautify page as time permits
+[] Beautify page as time permits - note margins around blocks especially
 [] Clean up code and final test before submission 
 */
