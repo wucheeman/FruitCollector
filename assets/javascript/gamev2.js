@@ -173,6 +173,8 @@ function setUpFruit() {
     var fruitForGame = $("<img>");
     fruitForGame.addClass("fruitImage");
     fruitForGame.attr("src", fruitSrcs[i]);
+    fruitForGame.attr("width", "90px");
+    fruitForGame.attr("height", "auto");
     fruitForGame.attr("data-fruitvalue", fruitNums[i]);
     var fruitClass = fruitClasses[i];
     $(fruitClass).append(fruitForGame);
@@ -224,6 +226,10 @@ $(document).ready(function() {
 // RESUME: 
 /*
 [] Beautify page as time permits
-   () margins around blocks especially
+   (x) margins around blocks
+   () padding within blocks
+   () background colors
+   () fonts
+   () fruit icon size
 [] Clean up code and final test before submission 
 */

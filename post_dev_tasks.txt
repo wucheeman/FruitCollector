@@ -18,5 +18,5 @@ Submit Homework
 [] Provide link to GitHub repo in BCS
 [] Provide link to GitHub Pages in BCS
 [] Provide link to updated portfolio in the comments section of your homework.
-[] Add comment on changes from Requirements:
+[] Add comment on changes from Requirements
 [] Add other comments
