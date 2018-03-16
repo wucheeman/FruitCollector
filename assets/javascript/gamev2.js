@@ -1,10 +1,7 @@
 // GLOBALS
 //=======================================================
 
-// TODO: does 'fruit' need to be global?
-//var fruitClasses;
 var displayFruit
-
 var targetNum;
 var currentScore;
 var wins;
@@ -23,24 +20,24 @@ function displayCurrentScore() {
 
 function displayStatus() {
   if (gameStatus === "start") {
-    console.log("Displaying initial gameStatus");
+    // console.log("Displaying initial gameStatus");
     $("#status").text("Let's play!!");
   }
   else if (gameStatus === "win") {
-    console.log("Displaying win gameStatus");
+    // console.log("Displaying win gameStatus");
     $("#status").text("You won!!");
   }
   else if (gameStatus === "lose") {
-    console.log("Displaying lose gameStatus");
+    // console.log("Displaying lose gameStatus");
     $("#status").text("You lost!!");
   }
   else {
-    console.log("Shouldn't get here in displayStatus");
+    // console.log("Shouldn't get here in displayStatus");
   }
 }
 
 function displayLosses() {
-  console.log("starting displayLosses");
+  // console.log("starting displayLosses");
   $("#losses").text(losses);
 }
 
@@ -49,7 +46,7 @@ function displayTargetNum() {
 }
 
 function displayWins() {
-  console.log("starting displayWins");
+  // console.log("starting displayWins");
   $("#wins").text(wins);
 }
 
@@ -69,69 +66,68 @@ function initializeDisplay() {
   displayCurrentScore();
   displayWins();
   displayLosses();
-  console.log("calling displayStatus");
   displayStatus('start');
 }
 
 function initalizeGlobals() {
   // initializes values for newly started game
-  console.log("in initializeGlobals")
+  // console.log("in initializeGlobals")
   targetNum = setTargetNum();
   displayFruit = $(".fruit");
   currentScore = 0;
   playAnother = false;
   if (!continuing) {
     fruitClasses = setUpFruit();
-    // console.log("with continuing = false, FruitClasses is " + fruitClasses);
     wins = 0;
     losses = 0;
     gameStatus = "start";
   }
   else {
-    // console.log("with continuing = true, FruitClasses is " + fruitClasses);
     reInitializeFruit();
   }
 }
 
-function logVals() {
-  // TODO comment out when development is done
-  console.log("targetNum: " + targetNum +
-              " currentScore: " + currentScore +
-              " appleNum: " + appleNum +
-              " lemonNum: " + lemonNum +
-              " pearNum: " + pearNum + 
-              " orangeNum: " + orangeNum );
-}
+// function logVals() {
+//   // logskey values
+//   console.log("targetNum: " + targetNum +
+//               " currentScore: " + currentScore +
+//               " appleNum: " + appleNum +
+//               " lemonNum: " + lemonNum +
+//               " pearNum: " + pearNum + 
+//               " orangeNum: " + orangeNum );
+// }
 
 function main() {
-  console.log("in main")
+  // console.log("in main")
   setUpGame();
   play();
-  console.log('finished play and still running');
+  // console.log('finished play and still running');
 }
-
 
 function play() {
   // play the game until the window is closed
   displayFruit.on("click", ".fruitImage", function() {
-    console.log('starting play loop');
+    // console.log('starting play loop');
     var fruitValue = ($(this).attr("data-fruitvalue"));
     fruitValue = parseInt(fruitValue);
-    console.log("This fruit's value is: " + fruitValue);
+    // console.log("This fruit's value is: " + fruitValue);
     currentScore += fruitValue;
     displayCurrentScore();
     winLoseOrGoOn();
     continuing = true;
     if (playAnother) {
-      console.log("starting a new game");
+      // console.log("starting a new game");
       setUpGame();
     }
-    console.log('at end of play\'s loop');
+    // console.log('at end of play\'s loop');
   }); // close of on-click function
 }
 
 function playSound(outcome) {
-  console.log("In playSound");
+  // plays sound at end of a round of the game
+  // sound effect license is Creative Commons License: Attribution 3.0 recorded by Mike Koenig, 
+  // downloaded from http://soundbible.com/1003-Ta-Da.html and http://soundbible.com/831-Groan.html
+  // console.log("In playSound");
   var sound;
   var endGameSound = $("#audioplayer");
   if (outcome === 'win') {
@@ -143,21 +139,15 @@ function playSound(outcome) {
     endGameSound.attr("src", sound);
   }
   else {
-    console.log('playSound received unexpected message');
+    // console.log('playSound received unexpected message');
   }
 }
 
 function reInitializeFruit() {
-  // TODO: delete the console.logs
-  console.log('reinitializing fruit nums');
-
-  $(".fruitImage").each(function (index, value){
-    console.log($(this).attr("data-fruitvalue"));
+  // console.log('reinitializing fruit nums');
+  $(".fruitImage").each(function (index, value) {
     ($(this).attr("data-fruitvalue", getRandomNum([1, 12])));
-    console.log($(this).attr("data-fruitvalue"));
   });
-
-  console.log("exiting reInitializeFruit")
 }
 
 function setFruitNums() {
@@ -202,16 +192,13 @@ function setUpFruit() {
 function setUpGame() {
   // Sets up play of game
   initalizeGlobals();
-  // TODO - comment out
-  logVals();
+  // logVals();
   initializeDisplay();
 }
 
 function winLoseOrGoOn(){
   // updates browser window when player wins or loses
   if (currentScore === targetNum) {
-    // TODO: better way to do this? Make it DRY?
-    // alert("You win!");
     wins++;
     playSound("win");
     displayWins();
@@ -221,8 +208,6 @@ function winLoseOrGoOn(){
     return;
   }
   else if (currentScore > targetNum) {
-    // TODO: better way to do this?
-    // alert("You lose!!");
     losses++;
     playSound("lose");
     displayLosses();
@@ -231,7 +216,7 @@ function winLoseOrGoOn(){
     playAnother = true;
     return;
   }
-  console.log("Did not win or lose so winLoseOrGoOn says continue")
+  // console.log("Did not win or lose so continue")
 }
 
 // GAME
