@@ -227,7 +227,7 @@ $(document).ready(function() {
 /*
 [] Beautify page as time permits
    (x) margins around blocks
-   () padding within blocks
+   (x) padding within blocks
    () status counter values spaced well
    (x) background colors
    (x) text in current score boxes -> white
