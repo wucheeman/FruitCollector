@@ -230,7 +230,7 @@ $(document).ready(function() {
    () padding within blocks
    () status counter values spaced well
    (x) background colors
-   () text in current score boxes
+   (x) text in current score boxes -> white
    () fonts, sizing, emphasis (general)
    (x) fruit icon size
 [] Clean up code and final test before submission 
