@@ -132,15 +132,15 @@ function play() {
 
 function playSound(outcome) {
   console.log("In playSound");
-  // var sound;
-  var endGameSong = document.getElementById("audioplayer");
+  var sound;
+  var endGameSound = $("#audioplayer");
   if (outcome === 'win') {
-    // sound = '/assets/audio/Ta_Da-SoundBible.com-1884170640.mp3'
-    // add attribute 'controls' to audio tag to make them visible
-    endGameSong.innerHTML = '<audio autoplay src="assets/audio/Ta_Da-SoundBible.com-1884170640.mp3"/>';
+    sound = 'assets/audio/Ta_Da-SoundBible.com-1884170640.mp3'
+    endGameSound.attr("src", sound);
   }
   else if (outcome === 'lose') {
-    endGameSong.innerHTML = '<audio autoplay src="assets/audio/Groan-SoundBible.com-1306380507.mp3"/>';
+    sound = "assets/audio/Groan-SoundBible.com-1306380507.mp3";
+    endGameSound.attr("src", sound);
   }
   else {
     console.log('playSound received unexpected message');
@@ -252,6 +252,7 @@ $(document).ready(function() {
    (x) text in current score boxes -> white
    (x) fonts, sizing, emphasis (general)
    (x) fruit icon size
-[] Add ta-da and groan sounds when round concludes (stretch)
+[x] Add ta-da and groan sounds when round concludes (stretch)
+[] Third round test
 [] Clean up code and final test before submission 
 */
