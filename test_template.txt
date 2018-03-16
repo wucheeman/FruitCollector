@@ -33,6 +33,7 @@ Functionality
 =============
 [] Game initializes globals correctly
 [] Game reinitializes globals correctly
+[] ta-da and groan sounds play when game won(stretch)
 
 
 Display
