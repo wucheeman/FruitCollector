@@ -18,7 +18,9 @@ var continuing = false;
 //=======================================================
 
 function displayCurrentScore() {
-  $(".currentScoreArea").text(currentScore);
+  // $("#errorSuccess").append("<b>" + aux + "</b>");
+  $(".currentScoreArea").append("<h5>" + currentScore + "</h5>");
+  // $(".currentScoreArea").text(currentScore);
 }
 
 function displayStatus() {
@@ -231,7 +233,8 @@ $(document).ready(function() {
    () status counter values spaced well
    (x) background colors
    (x) text in current score boxes -> white
-   () fonts, sizing, emphasis (general)
+   (x) fonts, sizing, emphasis (general)
    (x) fruit icon size
+[] Add ta-da and groan sounds when round concludes (stretch)
 [] Clean up code and final test before submission 
 */

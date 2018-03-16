@@ -17,8 +17,15 @@ body {
   height: 100%;
 }
 
+.hidden {
+  /* Improve on this hack when time permits */
+  visibility: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .rules {
   background-color: #FEE3C5;
+  color: #5E8046;
 }
 
 .stats {
