@@ -253,6 +253,6 @@ $(document).ready(function() {
    (x) fonts, sizing, emphasis (general)
    (x) fruit icon size
 [x] Add ta-da and groan sounds when round concludes (stretch)
-[] Third round test
+[x] Third round test
 [] Clean up code and final test before submission 
 */
