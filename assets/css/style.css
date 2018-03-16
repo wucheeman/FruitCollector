@@ -17,8 +17,24 @@ body {
   height: 100%;
 }
 
+.rules {
+  background-color: #FEE3C5;
+}
+
+.stats {
+  background-color: #01FEFF;
+}
+
+.targetNum {
+  background-color: #3BB373;
+}
 .title {
-  background-color: burlywood;
+  background-color: #D06A1E;
+}
+
+.totalScore,
+.currentScoreArea {
+  background-color: #004041;
 }
 
 .transparent {

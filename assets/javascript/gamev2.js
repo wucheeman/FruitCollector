@@ -228,8 +228,10 @@ $(document).ready(function() {
 [] Beautify page as time permits
    (x) margins around blocks
    () padding within blocks
-   () background colors
-   () fonts
-   () fruit icon size
+   () status counter values spaced well
+   (x) background colors
+   () text in current score boxes
+   () fonts, sizing, emphasis (general)
+   (x) fruit icon size
 [] Clean up code and final test before submission 
 */
