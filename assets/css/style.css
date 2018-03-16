@@ -17,6 +17,10 @@ body {
   height: 100%;
 }
 
+.currentScoreArea {
+  font-size: 150%;
+}
+
 .hidden {
   /* Improve on this hack when time permits */
   visibility: hidden;

@@ -18,9 +18,7 @@ var continuing = false;
 //=======================================================
 
 function displayCurrentScore() {
-  // $("#errorSuccess").append("<b>" + aux + "</b>");
-  $(".currentScoreArea").append("<h5>" + currentScore + "</h5>");
-  // $(".currentScoreArea").text(currentScore);
+  $(".currentScoreArea").text(currentScore);
 }
 
 function displayStatus() {
@@ -132,6 +130,23 @@ function play() {
   }); // close of on-click function
 }
 
+// function playSound(outcome) {
+//   console.log("In playSound");
+//   // var sound;
+//   var endGameSong = document.getElementById("audioplayer");
+//   if (outcome === 'win') {
+//     // sound = '/assets/audio/Ta_Da-SoundBible.com-1884170640.mp3'
+//     // add attribute 'controls' to audio tag to make them visible
+//     endGameSong.innerHTML = '<audio autoplay src="assets/audio/Ta_Da-SoundBible.com-1884170640.mp3"/>';
+//   }
+//   else if (outcome === 'lose') {
+//     endGameSong.innerHTML = '<audio autoplay src="assets/audio/Groan-SoundBible.com-1306380507.mp3"/>';
+//   }
+//   else {
+//     console.log('playSound received unexpected message');
+//   }
+// }
+
 function reInitializeFruit() {
   // TODO: delete the console.logs
   console.log('reinitializing fruit nums');
@@ -198,6 +213,7 @@ function winLoseOrGoOn(){
     // TODO: better way to do this? Make it DRY?
     // alert("You win!");
     wins++;
+    // playSound("win");
     displayWins();
     gameStatus = "win";
     displayStatus();
@@ -208,6 +224,7 @@ function winLoseOrGoOn(){
     // TODO: better way to do this?
     // alert("You lose!!");
     losses++;
+    // playSound("lose");
     displayLosses();
     gameStatus = 'lose';
     displayStatus();
