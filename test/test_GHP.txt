@@ -1,0 +1,57 @@
+TEST RESULTS -GITHUB PAGES
+
+d = deferred
+e = met by enhancement
+p = passed
+w = waiting for further work
+
+
+Requirements
+============
+[p] Game plays as follows:
+	(p) four crystals displayed as buttons on the page.
+	(p) player is shown a random number at the start of the game.
+	(p) When player clicks on a crystal, it adds a specific amount to the player's total score as shown in a counter
+	(p) game hides this amount until the player clicks a crystal.
+	(p) player wins if total score matches random number and loses if total score goes it.
+[p] The random number should be between 19 - 120.
+[p] Each crystal should have a random hidden value between 1 - 12.
+[p] Game restarts whenever the player wins or loses.
+[p] On restart:
+	(p) game generates new random number to be matched
+	(p) all crystals have four new hidden values.
+	(p) user's current score resets to zero.
+[p] App shows the number of games the player wins and loses.
+[p] App does not refresh the page to restart the game.
+
+
+Bonus
+=====
+
+
+Functionality
+=============
+[p] Game initializes globals correctly
+[p] Game reinitializes globals correctly
+[p] ta-da and groan sounds play when game won(stretch)
+
+
+Display
+=======
+[p] Page closely resembles target_display.PNG
+[p] Behavior when user wins/loses:
+	(p) Win/loss area says 'you won!!' or 'you lost!!' and updates counters. As new game progresses, this stays static until the next win/or loss.
+	(p) CurrentScore area resets to zero. It does not update to show the final value that caused the player to win or lose.
+	(p) Target number resets to new number
+
+
+GitHub Pages
+============
+[p] Page performs on load as expected
+[p] Page performs after reload as expected
+
+Cleanup
+=======
+[p] HTML validates
+[p] CSS validates
+[d] JS delinted (stretch)
