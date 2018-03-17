@@ -131,11 +131,11 @@ function playSound(outcome) {
   var sound;
   var endGameSound = $("#audioplayer");
   if (outcome === 'win') {
-    sound = 'assets/audio/Ta_Da-SoundBible.com-1884170640.mp3'
+    sound = './assets/audio/Ta_Da-SoundBible.com-1884170640.mp3'
     endGameSound.attr("src", sound);
   }
   else if (outcome === 'lose') {
-    sound = "assets/audio/Groan-SoundBible.com-1306380507.mp3";
+    sound = "./assets/audio/Groan-SoundBible.com-1306380507.mp3";
     endGameSound.attr("src", sound);
   }
   else {
